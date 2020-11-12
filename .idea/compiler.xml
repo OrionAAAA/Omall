@@ -7,6 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Omall-pojo" />
+        <module name="Omall-zuul" />
+        <module name="Omall-mapper" />
+        <module name="Omall-Eureka" />
       </profile>
     </annotationProcessing>
   </component>
