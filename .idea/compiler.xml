@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Omall-pojo" />
         <module name="Omall-zuul" />
+        <module name="Omall-mybatisGenerator" />
+        <module name="Omall-test" />
+        <module name="Omall-pojo" />
         <module name="Omall-mapper" />
         <module name="Omall-Eureka" />
       </profile>

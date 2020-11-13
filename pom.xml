@@ -9,10 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-        <module>Omall-pojo</module>
         <module>Omall-mapper</module>
         <module>Omall-Eureka</module>
         <module>Omall-zuul</module>
+        <module>Omall-mybatisGenerator</module>
+        <module>Omall-pojo</module>
+        <module>Omall-test</module>
+
     </modules>
 
 
