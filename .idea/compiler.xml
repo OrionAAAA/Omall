@@ -15,4 +15,14 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Omall-Eureka" options="-parameters" />
+      <module name="Omall-mapper" options="-parameters" />
+      <module name="Omall-mybatisGenerator" options="-parameters" />
+      <module name="Omall-pojo" options="-parameters" />
+      <module name="Omall-test" options="-parameters" />
+      <module name="Omall-zuul" options="-parameters" />
+    </option>
+  </component>
 </project>
