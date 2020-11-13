@@ -64,6 +64,7 @@
         <module>Omall-mybatisGenerator</module>
         <module>Omall-pojo</module>
         <module>Omall-test</module>
+        <module>Omall-manager-ms</module>
 
     </modules>
 
