@@ -1,0 +1,23 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8989
+spring:
+  application:
+    name: Omall-zuul
+zuul:
+  routes:
+    api-manager:
+      path: /Omall-manager/**
+      service-id: Omall-sellergoods-ms
+    api-content:
+      path: /Omall-content/**
+      service-id: Omall-content-ms
+    api-search:
+      path: /Omall-search/**
+      service-id: Omall-search-ms
+    api-page:
+      path: /Omall-page/**
+      service-id: Omall-page-ms
