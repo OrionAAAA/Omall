@@ -1,6 +1,7 @@
 package com.ori.Omall.service;
 
 import com.ori.Omall.pojo.TbSpecification;
+import com.ori.Omall.pojogroup.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,9 +12,12 @@ import java.util.List;
 
 public interface SpecificationService {
 
-    List<TbSpecification> getAllSpecification();
-    TbSpecification getSpecificationById(long id);
-    void addSpecification (TbSpecification tbSpecification);
-    void updateSpecification(TbSpecification tbSpecification);
+    List<TbSpecification> AllTbSpecification();
+
+    Specification getSpecificationById(long id);
+
     void deleteSpecification(long id);
+
+    void addSpecification(Specification specification);
+    void updateSpecification(Specification specification);
 }
