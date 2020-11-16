@@ -1,5 +1,6 @@
 package com.ori.Omall.controller;
 
+import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.pojo.TbSpecification;
 import com.ori.Omall.pojogroup.Specification;
 import com.ori.Omall.service.SpecificationService;
@@ -27,6 +28,17 @@ public class SpecificationController {
         System.out.println(specificationService.AllTbSpecification());
         return specificationService.AllTbSpecification();
     }
+
+    /**
+     * 返回全部列表
+     * @return
+     */
+    @GetMapping("/findPage")
+    public PageResult findPage(int page, int rows){
+        return specificationService.findPage(page, rows);
+    }
+
+
     @GetMapping("/findOne")
     public Specification loadAnSpecification(long id){
         return specificationService.getSpecificationById(id);

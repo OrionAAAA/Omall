@@ -10,9 +10,9 @@
         <module name="Omall-mybatisGenerator" />
         <module name="Omall-test" />
         <module name="Omall-pojo" />
-        <module name="Omall-Eureka" />
         <module name="Omall-mapper" />
         <module name="Omall-manager-ms" />
+        <module name="Omall-Eureka" />
       </profile>
     </annotationProcessing>
   </component>

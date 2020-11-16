@@ -1,5 +1,8 @@
 package com.ori.Omall.service.imlp;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.mapper.TbSpecificationMapper;
 import com.ori.Omall.mapper.TbSpecificationOptionMapper;
 import com.ori.Omall.pojo.TbSpecification;
@@ -88,5 +91,12 @@ public class SpecificationServiceImpl implements SpecificationService {
 
             specificationOptionMapper.insert(specificationOption);
         }
+    }
+
+    @Override
+    public PageResult findPage(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        Page<TbSpecification> page=   (Page<TbSpecification>) specificationMapper.selectByExample(null);
+        return new PageResult(page.getTotal(), page.getResult());
     }
 }

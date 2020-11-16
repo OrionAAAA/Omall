@@ -1,5 +1,6 @@
 package com.ori.Omall.service;
 
+import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.pojo.TbSpecification;
 import com.ori.Omall.pojogroup.Specification;
 import org.springframework.stereotype.Service;
@@ -20,4 +21,6 @@ public interface SpecificationService {
 
     void addSpecification(Specification specification);
     void updateSpecification(Specification specification);
+
+    PageResult findPage(int page, int rows);
 }

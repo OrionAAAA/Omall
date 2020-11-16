@@ -11,7 +11,7 @@ zuul:
   routes:
     api-manager:
       path: /Omall-manager/**
-      service-id: Omall-sellergoods-ms
+      service-id: Omall-manager-ms
     api-content:
       path: /Omall-content/**
       service-id: Omall-content-ms
