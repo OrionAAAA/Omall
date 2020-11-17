@@ -11,6 +11,7 @@
         <module name="Omall-test" />
         <module name="Omall-pojo" />
         <module name="Omall-mapper" />
+        <module name="Omall-content-ms" />
         <module name="Omall-manager-ms" />
         <module name="Omall-Eureka" />
       </profile>
@@ -19,6 +20,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Omall-Eureka" options="-parameters" />
+      <module name="Omall-content-ms" options="-parameters" />
       <module name="Omall-manager-ms" options="-parameters" />
       <module name="Omall-mapper" options="-parameters" />
       <module name="Omall-mybatisGenerator" options="-parameters" />

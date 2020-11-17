@@ -6,13 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
- * Created by Orion on 2020/11/16 9:28
+ * Created by Orion on 2020/11/17 16:55
  */
 @SpringBootApplication
 @EnableEurekaClient
 @MapperScan("com.ori.Omall.mapper")
-public class OmallManagerMsApplication {
+public class OmallContentMsApplication {
     public static void main(String[] args) {
-        SpringApplication.run(OmallManagerMsApplication.class,args);
+        SpringApplication.run(OmallContentMsApplication.class,args);
     }
 }

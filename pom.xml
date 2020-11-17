@@ -65,6 +65,7 @@
         <module>Omall-pojo</module>
         <module>Omall-test</module>
         <module>Omall-manager-ms</module>
+        <module>Omall-content-ms</module>
 
     </modules>
 
