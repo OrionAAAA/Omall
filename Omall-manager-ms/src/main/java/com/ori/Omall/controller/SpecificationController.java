@@ -48,4 +48,41 @@ public class SpecificationController {
         specificationService.addSpecification(specification);
         return new Result().success("添加成功");
     }
+
+    /**
+     * 修改
+     * @param specification
+     * @return
+     */
+    @PostMapping("/update")
+    public Result update(@RequestBody Specification specification){
+        try {
+            specificationService.updateSpecification(specification);
+            return new Result(true, "修改成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "修改失败");
+        }
+    }
+
+
+    /**
+     * 批量删除
+     * @param ids
+     * @return
+     */
+    @GetMapping("/delete")
+    public Result delete(Long [] ids){
+        try {
+            specificationService.deleteSpecification(ids);
+            System.out.println("SpecificationController.delete"+"删除成功");
+            for (long id:ids){
+                System.out.println(specificationService.getSpecificationById(id));
+            }
+            return new Result(true, "删除成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "删除失败");
+        }
+    }
 }

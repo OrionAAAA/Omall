@@ -17,7 +17,7 @@ public interface SpecificationService {
 
     Specification getSpecificationById(long id);
 
-    void deleteSpecification(long id);
+    void deleteSpecification(Long [] ids);
 
     void addSpecification(Specification specification);
     void updateSpecification(Specification specification);

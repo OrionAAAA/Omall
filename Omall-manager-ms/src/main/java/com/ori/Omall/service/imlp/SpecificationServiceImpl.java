@@ -48,8 +48,17 @@ public class SpecificationServiceImpl implements SpecificationService {
 
 
     @Override
-    public void deleteSpecification(long id) {
-        specificationMapper.deleteByPrimaryKey(id);
+    public void deleteSpecification(Long [] ids) {
+        for(Long id:ids){
+            // 删除规格
+            specificationMapper.deleteByPrimaryKey(id);
+
+            // 删除规格选项:
+            TbSpecificationOptionExample example = new TbSpecificationOptionExample();
+            TbSpecificationOptionExample.Criteria criteria = example.createCriteria();
+            criteria.andSpecIdEqualTo(id);
+            specificationOptionMapper.deleteByExample(example);
+        }
     }
 
     /**
@@ -82,7 +91,7 @@ public class SpecificationServiceImpl implements SpecificationService {
 
         criteria.andSpecIdEqualTo(specification.getSpecification().getId());
 
-        specificationOptionMapper.deleteByExample(example);  //delete from specificatoin_option where spec_id=?
+        specificationOptionMapper.deleteByExample(example);  //delete from specification_option where spec_id=?
 
         // 保存规格选项
         for(TbSpecificationOption specificationOption: specification.getSpecificationOptionList()){
