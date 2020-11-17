@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Orion on 2020/11/16 9:18
@@ -85,4 +86,10 @@ public class SpecificationController {
             return new Result(false, "删除失败");
         }
     }
+
+    @RequestMapping("/selectOptionList")
+    public List<Map> selectOptionList(){
+        return specificationService.selectOptionList();
+    }
+
 }

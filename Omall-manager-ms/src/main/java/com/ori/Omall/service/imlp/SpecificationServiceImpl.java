@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Orion on 2020/11/16 8:40
@@ -96,6 +97,7 @@ public class SpecificationServiceImpl implements SpecificationService {
         // 保存规格选项
         for(TbSpecificationOption specificationOption: specification.getSpecificationOptionList()){
             // 设置规格的ID:
+            System.out.println(specificationOption.getId());
             specificationOption.setSpecId(specification.getSpecification().getId());
 
             specificationOptionMapper.insert(specificationOption);
@@ -107,5 +109,10 @@ public class SpecificationServiceImpl implements SpecificationService {
         PageHelper.startPage(pageNum, pageSize);
         Page<TbSpecification> page=   (Page<TbSpecification>) specificationMapper.selectByExample(null);
         return new PageResult(page.getTotal(), page.getResult());
+    }
+
+    @Override
+    public List<Map> selectOptionList() {
+        return specificationMapper.selectOptionList();
     }
 }

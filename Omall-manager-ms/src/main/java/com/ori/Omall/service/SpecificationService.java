@@ -6,6 +6,7 @@ import com.ori.Omall.pojogroup.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Orion on 2020/11/13 15:36
@@ -23,4 +24,6 @@ public interface SpecificationService {
     void updateSpecification(Specification specification);
 
     PageResult findPage(int page, int rows);
+
+    public List<Map> selectOptionList();
 }

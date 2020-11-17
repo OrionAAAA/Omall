@@ -86,6 +86,9 @@
     from tb_specification
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectOptionList" resultType="java.util.Map">
+   select id,spec_name as text from tb_specification
+</select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from tb_specification
     where id = #{id,jdbcType=BIGINT}
