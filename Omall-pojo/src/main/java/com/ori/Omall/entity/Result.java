@@ -20,7 +20,12 @@ public class Result implements Serializable {
         this.success = success;
         this.message = message;
     }
-
+    public Result success(String message){
+        return new Result(true,message);
+    }
+    public Result fail(String message){
+        return new Result(false,message);
+    }
     public boolean isSuccess() {
         return success;
     }

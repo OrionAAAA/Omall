@@ -60,7 +60,7 @@ public class SpecificationServiceImpl implements SpecificationService {
         // 保存规格  一方的数据
         specificationMapper.insert(specification.getSpecification());
         // 保存规格选项  多方的数据
-        for(TbSpecificationOption specificationOption: specification.getSpecificationOptionList()){
+        for(TbSpecificationOption specificationOption:specification.getSpecificationOptionList()){
             // 设置规格的ID:  主键回填
             specificationOption.setSpecId(specification.getSpecification().getId());
 

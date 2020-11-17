@@ -1,13 +1,12 @@
 package com.ori.Omall.controller;
 
 import com.ori.Omall.entity.PageResult;
+import com.ori.Omall.entity.Result;
 import com.ori.Omall.pojo.TbSpecification;
 import com.ori.Omall.pojogroup.Specification;
 import com.ori.Omall.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,5 +41,11 @@ public class SpecificationController {
     @GetMapping("/findOne")
     public Specification loadAnSpecification(long id){
         return specificationService.getSpecificationById(id);
+    }
+
+    @PostMapping("/add")
+    public Result addSpecification(@RequestBody Specification specification){
+        specificationService.addSpecification(specification);
+        return new Result().success("添加成功");
     }
 }
