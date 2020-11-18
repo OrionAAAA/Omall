@@ -10,10 +10,11 @@
         <module name="Omall-mybatisGenerator" />
         <module name="Omall-test" />
         <module name="Omall-pojo" />
-        <module name="Omall-mapper" />
-        <module name="Omall-content-ms" />
-        <module name="Omall-manager-ms" />
         <module name="Omall-Eureka" />
+        <module name="Omall-mapper" />
+        <module name="Redis-demo" />
+        <module name="Omall-manager-ms" />
+        <module name="Omall-content-ms" />
       </profile>
     </annotationProcessing>
   </component>
@@ -27,6 +28,7 @@
       <module name="Omall-pojo" options="-parameters" />
       <module name="Omall-test" options="-parameters" />
       <module name="Omall-zuul" options="-parameters" />
+      <module name="Redis-demo" options="-parameters" />
     </option>
   </component>
 </project>
