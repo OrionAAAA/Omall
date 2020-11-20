@@ -92,6 +92,28 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public List<TbContent> findByCategoryId(Long categoryId) {
-        return null;
+
+        //redisTemplate.opsForHash(); List<String> list = (List<String>) redisTemplate.opsForHash().get("content",categoryId);
+        // 加入缓存的代码:
+//        List<TbContent> list = (List<TbContent>) redisTemplate.boundHashOps("content").get(categoryId);
+
+//        if(list==null){
+            System.out.println("查询数据库===================");
+            TbContentExample example = new TbContentExample();
+            TbContentExample.Criteria criteria = example.createCriteria();
+            // 有效广告:
+            criteria.andStatusEqualTo("1");
+
+            criteria.andCategoryIdEqualTo(categoryId);
+            // 排序
+            example.setOrderByClause("sort_order");
+
+            List<TbContent>  list = contentMapper.selectByExample(example);
+
+//            redisTemplate.boundHashOps("content").put(categoryId, list);
+//        }else{
+//            System.out.println("从缓存中获取====================");
+//        }
+        return list;
     }
 }
