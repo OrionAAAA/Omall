@@ -43,7 +43,6 @@ public class ContentController {
      */
     @RequestMapping("/findPage")
     public PageResult findPage(int page, int rows){
-        System.out.println(contentService.findPage(page, rows).getRows().get(0));
         return contentService.findPage(page, rows);
     }
 

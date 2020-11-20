@@ -28,7 +28,6 @@ public class ContentCategoryController {
      */
     @RequestMapping("/findAll")
     public List<TbContentCategory> findAll() {
-        System.out.println("fingAll");
         return contentCategoryService.findAll();
     }
 
@@ -40,7 +39,6 @@ public class ContentCategoryController {
      */
     @RequestMapping("/findPage")
     public PageResult findPage(int page, int rows) {
-        System.out.println("findCatPage");
         return contentCategoryService.findPage(page, rows);
     }
 
