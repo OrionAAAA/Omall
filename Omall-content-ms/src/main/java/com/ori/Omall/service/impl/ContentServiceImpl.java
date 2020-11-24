@@ -25,11 +25,17 @@ public class ContentServiceImpl implements ContentService {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    /**
+     * 查找全部
+     */
     @Override
     public List<TbContent> findAll() {
         return contentMapper.selectByExample(null);
     }
 
+    /**
+     * 按分页查询
+     */
     @Override
     public PageResult findPage(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
@@ -48,16 +54,24 @@ public class ContentServiceImpl implements ContentService {
         contentMapper.updateByPrimaryKey(content);
     }
 
+    /**
+     * 根据ID获取实体
+     * @param id
+     * @return
+     */
     @Override
     public TbContent findOne(Long id) {
         return contentMapper.selectByPrimaryKey(id);
     }
 
+    /**
+     * 批量删除
+     */
     @Override
     public void delete(Long[] ids) {
         for(Long id:ids){
             TbContent tbContent = contentMapper.selectByPrimaryKey(id);
-//            redisTemplate.boundHashOps("content").delete(tbContent.getCategoryId());
+            redisTemplate.boundHashOps("content").delete(tbContent.getCategoryId());
 
             contentMapper.deleteByPrimaryKey(id);
         }
@@ -90,14 +104,23 @@ public class ContentServiceImpl implements ContentService {
         return new PageResult(page.getTotal(), page.getResult());
     }
 
+    /**
+     * 首次访问时，如果redis没有数据，就访问数据库，把数据存到redis
+     * 后续访问时，直接查询redis
+     *
+     *   哈希结构
+     *        Key  content
+     *                     field            value
+     *                     categoryid 1     List<TbContent>
+     *
+     */
     @Override
     public List<TbContent> findByCategoryId(Long categoryId) {
 
-        //redisTemplate.opsForHash(); List<String> list = (List<String>) redisTemplate.opsForHash().get("content",categoryId);
-        // 加入缓存的代码:
-//        List<TbContent> list = (List<TbContent>) redisTemplate.boundHashOps("content").get(categoryId);
+//         加入缓存的代码:
+        List<TbContent> list = (List<TbContent>) redisTemplate.boundHashOps("content").get(categoryId);
 
-//        if(list==null){
+        if(list==null){
             System.out.println("查询数据库===================");
             TbContentExample example = new TbContentExample();
             TbContentExample.Criteria criteria = example.createCriteria();
@@ -108,12 +131,12 @@ public class ContentServiceImpl implements ContentService {
             // 排序
             example.setOrderByClause("sort_order");
 
-            List<TbContent>  list = contentMapper.selectByExample(example);
+            list = contentMapper.selectByExample(example);
 
-//            redisTemplate.boundHashOps("content").put(categoryId, list);
-//        }else{
-//            System.out.println("从缓存中获取====================");
-//        }
+            redisTemplate.boundHashOps("content").put(categoryId, list);
+        }else{
+            System.out.println("从缓存中获取====================");
+        }
         return list;
     }
 }

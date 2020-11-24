@@ -24,7 +24,6 @@ public class ContentController {
 
     @RequestMapping("/findByCategoryId")
     public List<TbContent> findByCategoryId(Long categoryId){
-        System.out.println(contentService.findByCategoryId(categoryId));
         return contentService.findByCategoryId(categoryId);
     }
 
@@ -107,7 +106,6 @@ public class ContentController {
 
     /**
      * 查询+分页
-     * @param brand
      * @param page
      * @param rows
      * @return
