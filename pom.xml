@@ -67,6 +67,7 @@
         <module>Omall-manager-ms</module>
         <module>Omall-content-ms</module>
         <module>Redis-demo</module>
+        <module>Omall-search-ms</module>
 
     </modules>
 

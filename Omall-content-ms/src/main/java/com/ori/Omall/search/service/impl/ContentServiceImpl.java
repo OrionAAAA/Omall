@@ -1,4 +1,4 @@
-package com.ori.Omall.service.impl;
+package com.ori.Omall.search.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -6,7 +6,7 @@ import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.mapper.TbContentMapper;
 import com.ori.Omall.pojo.TbContent;
 import com.ori.Omall.pojo.TbContentExample;
-import com.ori.Omall.service.ContentService;
+import com.ori.Omall.search.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

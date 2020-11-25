@@ -1,4 +1,4 @@
-package com.ori.Omall.service.impl;
+package com.ori.Omall.search.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -6,7 +6,7 @@ import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.mapper.TbContentCategoryMapper;
 import com.ori.Omall.pojo.TbContentCategory;
 import com.ori.Omall.pojo.TbContentCategoryExample;
-import com.ori.Omall.service.ContentCategoryService;
+import com.ori.Omall.search.service.ContentCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

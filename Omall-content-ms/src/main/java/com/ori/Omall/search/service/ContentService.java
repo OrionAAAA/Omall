@@ -1,19 +1,19 @@
-package com.ori.Omall.service;
+package com.ori.Omall.search.service;
 
 import com.ori.Omall.entity.PageResult;
-import com.ori.Omall.pojo.TbContentCategory;
+import com.ori.Omall.pojo.TbContent;
 
 import java.util.List;
 
 /**
- * Created by Orion on 2020/11/19 10:20
+ * Created by Orion on 2020/11/19 10:19
  */
-public interface ContentCategoryService {
+public interface ContentService {
     /**
      * 返回全部列表
      * @return
      */
-    public List<TbContentCategory> findAll();
+    public List<TbContent> findAll();
 
 
     /**
@@ -26,13 +26,13 @@ public interface ContentCategoryService {
     /**
      * 增加
      */
-    public void add(TbContentCategory contentCategory);
+    public void add(TbContent content);
 
 
     /**
      * 修改
      */
-    public void update(TbContentCategory contentCategory);
+    public void update(TbContent content);
 
 
     /**
@@ -40,7 +40,7 @@ public interface ContentCategoryService {
      * @param id
      * @return
      */
-    public TbContentCategory findOne(Long id);
+    public TbContent findOne(Long id);
 
 
     /**
@@ -55,5 +55,10 @@ public interface ContentCategoryService {
      * @param pageSize 每页记录数
      * @return
      */
-    public PageResult findPage(TbContentCategory contentCategory, int pageNum, int pageSize);
+    public PageResult findPage(TbContent content, int pageNum, int pageSize);
+
+    /**
+     * 根据广告分类ID查询广告
+     */
+    public List<TbContent> findByCategoryId(Long categoryId);
 }

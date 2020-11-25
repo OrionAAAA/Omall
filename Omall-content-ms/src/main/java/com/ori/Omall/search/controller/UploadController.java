@@ -1,10 +1,9 @@
-package com.ori.Omall.controller;
+package com.ori.Omall.search.controller;
 
 import com.ori.Omall.entity.Result;
 import io.minio.MinioClient;
 import io.minio.policy.PolicyType;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;

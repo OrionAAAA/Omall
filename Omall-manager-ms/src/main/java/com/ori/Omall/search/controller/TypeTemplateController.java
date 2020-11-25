@@ -1,9 +1,9 @@
-package com.ori.Omall.controller;
+package com.ori.Omall.search.controller;
 
 import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.entity.Result;
 import com.ori.Omall.pojo.TbTypeTemplate;
-import com.ori.Omall.service.TypeTemplateService;
+import com.ori.Omall.search.service.TypeTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;

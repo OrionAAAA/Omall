@@ -6,15 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Omall-search-ms" />
         <module name="Omall-zuul" />
         <module name="Omall-mybatisGenerator" />
         <module name="Omall-test" />
         <module name="Omall-pojo" />
+        <module name="Omall-Eureka" />
         <module name="Omall-mapper" />
-        <module name="Omall-content-ms" />
         <module name="Redis-demo" />
         <module name="Omall-manager-ms" />
-        <module name="Omall-Eureka" />
+        <module name="Omall-content-ms" />
       </profile>
     </annotationProcessing>
   </component>
@@ -26,6 +27,7 @@
       <module name="Omall-mapper" options="-parameters" />
       <module name="Omall-mybatisGenerator" options="-parameters" />
       <module name="Omall-pojo" options="-parameters" />
+      <module name="Omall-search-ms" options="-parameters" />
       <module name="Omall-test" options="-parameters" />
       <module name="Omall-zuul" options="-parameters" />
       <module name="Redis-demo" options="-parameters" />

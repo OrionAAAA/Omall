@@ -1,9 +1,8 @@
-package com.ori.Omall.service;
+package com.ori.Omall.search.service;
 
 import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.pojo.TbSpecification;
 import com.ori.Omall.pojogroup.Specification;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;

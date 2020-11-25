@@ -1,4 +1,4 @@
-package com.ori.Omall.service.imlp;
+package com.ori.Omall.search.service.imlp;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -9,7 +9,7 @@ import com.ori.Omall.pojo.TbSpecification;
 import com.ori.Omall.pojo.TbSpecificationOption;
 import com.ori.Omall.pojo.TbSpecificationOptionExample;
 import com.ori.Omall.pojogroup.Specification;
-import com.ori.Omall.service.SpecificationService;
+import com.ori.Omall.search.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
