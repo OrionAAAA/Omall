@@ -1,10 +1,10 @@
-package com.ori.Omall.search.controller;
+package com.ori.Omall.controller;
 
 import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.entity.Result;
 import com.ori.Omall.pojo.TbSpecification;
 import com.ori.Omall.pojogroup.Specification;
-import com.ori.Omall.search.service.SpecificationService;
+import com.ori.Omall.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

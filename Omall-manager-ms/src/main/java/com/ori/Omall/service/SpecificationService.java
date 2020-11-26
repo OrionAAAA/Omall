@@ -1,4 +1,4 @@
-package com.ori.Omall.search.service;
+package com.ori.Omall.service;
 
 import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.pojo.TbSpecification;

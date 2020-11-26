@@ -1,7 +1,7 @@
-package com.ori.Omall.search.controller;
+package com.ori.Omall.controller;
 
 import com.ori.Omall.mapper.TbItemMapper;
-import com.ori.Omall.search.service.ItemSearchService;
+import com.ori.Omall.service.ItemSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package com.ori.Omall.search.service;
+package com.ori.Omall.service;
 
 import java.util.List;
 import java.util.Map;

@@ -1,9 +1,9 @@
-package com.ori.Omall.search.controller;
+package com.ori.Omall.controller;
 
 import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.entity.Result;
 import com.ori.Omall.pojo.TbContentCategory;
-import com.ori.Omall.search.service.ContentCategoryService;
+import com.ori.Omall.service.ContentCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

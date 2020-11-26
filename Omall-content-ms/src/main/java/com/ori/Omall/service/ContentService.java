@@ -1,20 +1,19 @@
-package com.ori.Omall.search.service;
+package com.ori.Omall.service;
 
 import com.ori.Omall.entity.PageResult;
-import com.ori.Omall.pojo.TbTypeTemplate;
+import com.ori.Omall.pojo.TbContent;
 
 import java.util.List;
-import java.util.Map;
 
 /**
- * Created by Orion on 2020/11/17 10:54
+ * Created by Orion on 2020/11/19 10:19
  */
-public interface TypeTemplateService {
+public interface ContentService {
     /**
      * 返回全部列表
      * @return
      */
-    public List<TbTypeTemplate> findAll();
+    public List<TbContent> findAll();
 
 
     /**
@@ -27,13 +26,13 @@ public interface TypeTemplateService {
     /**
      * 增加
      */
-    public void add(TbTypeTemplate typeTemplate);
+    public void add(TbContent content);
 
 
     /**
      * 修改
      */
-    public void update(TbTypeTemplate typeTemplate);
+    public void update(TbContent content);
 
 
     /**
@@ -41,7 +40,7 @@ public interface TypeTemplateService {
      * @param id
      * @return
      */
-    public TbTypeTemplate findOne(Long id);
+    public TbContent findOne(Long id);
 
 
     /**
@@ -56,9 +55,10 @@ public interface TypeTemplateService {
      * @param pageSize 每页记录数
      * @return
      */
-    public PageResult findPage(TbTypeTemplate typeTemplate, int pageNum, int pageSize);
+    public PageResult findPage(TbContent content, int pageNum, int pageSize);
 
-
-    //根据模板ID查询规格列表
-    public List<Map> findSpecList(Long id);
+    /**
+     * 根据广告分类ID查询广告
+     */
+    public List<TbContent> findByCategoryId(Long categoryId);
 }

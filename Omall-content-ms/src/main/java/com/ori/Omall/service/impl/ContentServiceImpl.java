@@ -1,4 +1,4 @@
-package com.ori.Omall.search.service.impl;
+package com.ori.Omall.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -6,7 +6,7 @@ import com.ori.Omall.entity.PageResult;
 import com.ori.Omall.mapper.TbContentMapper;
 import com.ori.Omall.pojo.TbContent;
 import com.ori.Omall.pojo.TbContentExample;
-import com.ori.Omall.search.service.ContentService;
+import com.ori.Omall.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -51,7 +51,16 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public void update(TbContent content) {
+        TbContent oldContent = contentMapper.selectByPrimaryKey(content.getId());
+        // 清除之前分类的广告缓存
+        redisTemplate.boundHashOps("content").delete(oldContent.getCategoryId());
+
         contentMapper.updateByPrimaryKey(content);
+        // 清除缓存
+        if(content.getCategoryId() != oldContent.getCategoryId()){
+            redisTemplate.boundHashOps("content").delete(content.getCategoryId());
+        }
+
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.ori.Omall.search.service.imlp;
+package com.ori.Omall.service.imlp;
 
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
@@ -10,7 +10,7 @@ import com.ori.Omall.pojo.TbSpecificationOption;
 import com.ori.Omall.pojo.TbSpecificationOptionExample;
 import com.ori.Omall.pojo.TbTypeTemplate;
 import com.ori.Omall.pojo.TbTypeTemplateExample;
-import com.ori.Omall.search.service.TypeTemplateService;
+import com.ori.Omall.service.TypeTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

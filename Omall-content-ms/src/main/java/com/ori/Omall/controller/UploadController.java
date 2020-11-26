@@ -1,4 +1,4 @@
-package com.ori.Omall.search.controller;
+package com.ori.Omall.controller;
 
 import com.ori.Omall.entity.Result;
 import io.minio.MinioClient;

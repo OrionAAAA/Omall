@@ -1,7 +1,7 @@
-package com.ori.Omall.search.service.impl;
+package com.ori.Omall.service.impl;
 
 import com.ori.Omall.pojo.TbItem;
-import com.ori.Omall.search.service.ItemSearchService;
+import com.ori.Omall.service.ItemSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.core.query.Criteria;
