@@ -1,7 +1,6 @@
 package com.ori.Omall.pojo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 public class TbGoods implements Serializable {
     /**
@@ -93,7 +92,7 @@ public class TbGoods implements Serializable {
      *
      * @mbg.generated
      */
-    private BigDecimal price;
+    private Double price;
 
     /**
      * 分类模板ID
@@ -214,11 +213,11 @@ public class TbGoods implements Serializable {
         this.smallPic = smallPic;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
