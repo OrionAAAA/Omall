@@ -1,4 +1,4 @@
-package com.ori.Omall.search;
+package com.ori.Omall;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

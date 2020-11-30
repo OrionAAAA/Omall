@@ -94,6 +94,22 @@ public class GoodsController {
     }
 
     /**
+     * 审核
+     * @param
+     * @return
+     */
+    @RequestMapping("/updateStatus")
+    public Result updateStatus(Long[] ids,String status){
+        try {
+            goodsService.updateStatus(ids,status);
+            return new Result(true, "审核成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "审核失败");
+        }
+    }
+
+    /**
      * 获取实体
      * @param id
      * @return
@@ -112,6 +128,7 @@ public class GoodsController {
     public Result delete(Long [] ids){
         try {
             goodsService.delete(ids);
+            System.out.println("删除成功");
             return new Result(true, "删除成功");
         } catch (Exception e) {
             e.printStackTrace();
@@ -121,7 +138,7 @@ public class GoodsController {
 
     /**
      * 查询+分页
-     * @param brand
+     * @param
      * @param page
      * @param rows
      * @return

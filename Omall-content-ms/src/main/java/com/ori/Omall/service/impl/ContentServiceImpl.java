@@ -47,6 +47,7 @@ public class ContentServiceImpl implements ContentService {
     public void add(TbContent content) {
 
         contentMapper.insert(content);
+        redisTemplate.boundHashOps("content").delete(content.getCategoryId());
     }
 
     @Override
